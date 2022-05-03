@@ -22,13 +22,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" Version="1.6.5" />
-    <PackageReference Include="Nerdbank.GitVersioning" Version="2.3.38">
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.5.103">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Stride.Engine" Version="$(StrideVersion)" />
   </ItemGroup>
