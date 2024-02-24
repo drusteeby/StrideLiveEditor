@@ -1,15 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project Sdk="Microsoft.NET.Sdk">
   <!-- In our main repo this should get picked up and import targets which override the build version targets -->
-  <Import Project="$([MSBuild]::GetPathOfFileAbove($(MSBuildThisFile), $(MSBuildThisFileDirectory)..\..))"
-          Condition="Exists($([MSBuild]::GetPathOfFileAbove($(MSBuildThisFile), $(MSBuildThisFileDirectory)..\..)))" />
+  <Import Project="$([MSBuild]::GetPathOfFileAbove($(MSBuildThisFile), $(MSBuildThisFileDirectory)..\..))" Condition="Exists($([MSBuild]::GetPathOfFileAbove($(MSBuildThisFile), $(MSBuildThisFileDirectory)..\..)))" />
   <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <RootNamespace>StrideLiveEditor</RootNamespace>
     <AssemblyName>StrideLiveEditor</AssemblyName>
     <PackageId>$(AssemblyName)</PackageId>
     <Description>$(AssemblyName)</Description>
-    <StrideVersion Condition="'$(StrideVersion)' == ''">4.0.0.1-vvvv-1066</StrideVersion>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,7 +24,6 @@
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" />
     <PackageReference Include="Nerdbank.GitVersioning">
-      <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Stride.Engine" />

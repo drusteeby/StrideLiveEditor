@@ -46,6 +46,21 @@ namespace StrideLiveEditor
             Task.Factory.StartNew(UpdateNamesTicker);
         }
 
+        public LiveEditorMainWindow(SceneInstance sceneInstance)
+        {
+            if (sceneInstance == null)
+                throw new ArgumentNullException("sceneInstance");
+
+            InitializeComponent();
+
+            RootGrid.DataContext = this;
+
+            this.sceneInstance = sceneInstance;
+
+            Task.Factory.StartNew(UpdateComponentValuesTicker);
+            Task.Factory.StartNew(UpdateNamesTicker);
+        }
+
         #region Setup Stride Bindings
 
         private async void GetSceneInstance()
