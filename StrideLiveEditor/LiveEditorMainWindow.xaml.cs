@@ -61,6 +61,17 @@ namespace StrideLiveEditor
             Task.Factory.StartNew(UpdateNamesTicker);
         }
 
+        public LiveEditorMainWindow()
+        {
+            InitializeComponent();
+
+            RootGrid.DataContext = this;
+
+            Task.Factory.StartNew(WaitForSceneInstanceSet);
+            Task.Factory.StartNew(UpdateComponentValuesTicker);
+            Task.Factory.StartNew(UpdateNamesTicker);
+        }
+
         #region Setup Stride Bindings
 
         private async void GetSceneInstance()
@@ -106,6 +117,32 @@ namespace StrideLiveEditor
                     await Task.Delay(100);
                 }
             });
+        }
+
+        public void SetSceneInstance(SceneInstance sceneInstance)
+        {
+            this.sceneInstance = sceneInstance;
+        }
+
+        private async Task WaitForSceneInstanceSet()
+        {
+            Log("Waiting for scene instance to be set...");
+
+            await Task.Factory.StartNew(async () =>
+            {
+                while (true)
+                {
+                    if (this.sceneInstance != null)
+                        return;
+
+                    await Task.Delay(100);
+                }
+            });
+
+            if (sceneInstance == null)
+                Log(LogLevel.Error, "No scene instance found.");
+            else
+                Dispatcher.Invoke(OnSceneInstanceReady);
         }
 
         #endregion Setup Stride Bindings
