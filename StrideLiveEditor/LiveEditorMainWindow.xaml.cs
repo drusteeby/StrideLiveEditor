@@ -46,11 +46,36 @@ namespace StrideLiveEditor
             Task.Factory.StartNew(UpdateNamesTicker);
         }
 
-        #region Setup Xenko Bindings
+        public LiveEditorMainWindow(SceneInstance sceneInstance)
+        {
+            if (sceneInstance == null)
+                throw new ArgumentNullException("sceneInstance");
+
+            InitializeComponent();
+
+            RootGrid.DataContext = this;
+
+            this.sceneInstance = sceneInstance;
+
+            Task.Factory.StartNew(UpdateComponentValuesTicker);
+            Task.Factory.StartNew(UpdateNamesTicker);
+        }
+
+        public LiveEditorMainWindow()
+        {
+            InitializeComponent();
+
+            RootGrid.DataContext = this;
+
+            Task.Factory.StartNew(GetSceneInstanceSet);
+            Task.Factory.StartNew(UpdateComponentValuesTicker);
+            Task.Factory.StartNew(UpdateNamesTicker);
+        }
+
+        #region Setup Stride Bindings
 
         private async void GetSceneInstance()
         {
-            await WaitForSceneSystem();
             await WaitForSceneInstance();
 
             sceneInstance = game.SceneSystem.SceneInstance;
@@ -65,37 +90,82 @@ namespace StrideLiveEditor
         {
             Log("Waiting for scene system...");
 
-            await Task.Factory.StartNew(async () =>
+            while (game.SceneSystem == null)
             {
-                while (true)
-                {
-                    if (game.SceneSystem != null)
-                        return;
-
-                    await Task.Delay(100);
-                }
-            });
+                await Task.Delay(100);
+            }
         }
 
         private async Task WaitForSceneInstance()
         {
             Log("Waiting for scene instance...");
 
-            await Task.Factory.StartNew(async () =>
-            {
-                while (true)
-                {
-                    if (game.SceneSystem != null && game.SceneSystem.SceneInstance != null)
-                        return;
+            // Ensure this waits for the SceneSystem to be not null before proceeding.
+            // This check might be redundant if WaitForSceneSystem is always called before this method,
+            // but it's a safe practice if the methods could be called independently.
+            await WaitForSceneSystem();
 
-                    await Task.Delay(100);
-                }
-            });
+            while (game.SceneSystem.SceneInstance == null)
+            {
+                await Task.Delay(100);
+            }
         }
 
-        #endregion Setup Xenko Bindings
+        private async void GetSceneInstanceSet()
+        {
+            await WaitForSceneInstanceSet();
 
-        #region Xenko Event Handlers
+            if (sceneInstance == null)
+                Log(LogLevel.Error, "No scene instance found.");
+            else
+                Dispatcher.Invoke(OnSceneInstanceReady);
+        }
+
+        private async Task WaitForSceneInstanceSet()
+        {
+            Log("Waiting for scene instance to be set...");
+
+            while (sceneInstance == null)
+            {
+                await Task.Delay(100);
+            }
+        }
+
+        public void SetSceneInstance(SceneInstance newSceneInstance)
+        {
+            if (newSceneInstance == this.sceneInstance)
+                return;
+
+            // Detach event handlers from the current scene instance to avoid memory leaks.
+            if (sceneInstance != null)
+            {
+                Entities.Clear();
+                Scenes.Clear();
+                RemoveSceneInstanceEvents();
+            }
+
+            // Update the scene instance with the new value.
+            sceneInstance = newSceneInstance;
+
+            // If the new scene instance is null, initiate waiting for a new scene instance to be set.
+            if (sceneInstance == null)
+            {
+                Log("Scene instance set to null. Waiting for a new scene instance...");
+                Task.Factory.StartNew(GetSceneInstanceSet);
+            }
+            else
+            {
+                // New scene instance provided, attach event handlers, and initialize.
+                Dispatcher.Invoke(() =>
+                {
+                    OnSceneInstanceReady(); // This method should also rebuild the entity tree with the new scene instance.
+                });
+            }
+        }
+
+        #endregion Setup Stride Bindings
+
+        #region Stride Event Handlers
 
         private void SceneInstance_EntityAdded(object sender, Entity e)
         {
@@ -206,7 +276,7 @@ namespace StrideLiveEditor
             }
         }
 
-        #endregion Xenko Event Handlers
+        #endregion Stride Event Handlers
 
         #region UI Events
 

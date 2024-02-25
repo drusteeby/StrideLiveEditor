@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
     <RootNamespace>StrideLiveEditorContainerProject.Windows</RootNamespace>
@@ -16,12 +16,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\StrideLiveEditor\StrideLiveEditor.csproj" />
     <ProjectReference Include="..\StrideLiveEditorContainerProject\StrideLiveEditorContainerProject.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="WindowsBase" />
   </ItemGroup>
 
 </Project>

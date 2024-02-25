@@ -13,10 +13,9 @@
                 <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
                 <!-- Accent and AppTheme setting -->
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Steel.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Dark.Steel.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style x:Key="TextBlockText" TargetType="{x:Type TextBlock}">
                 <Setter Property="Foreground" Value="White"/>
@@ -35,7 +34,7 @@
 
         <Label Name="label2" Content="Components" Margin="265,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
         <Grid Margin="265,41,10,149">
-            <Border BorderBrush="Gray" BorderThickness="1">
+            <Border BorderBrush="Gray" BorderThickness="0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel x:Name="componentGridList">
 

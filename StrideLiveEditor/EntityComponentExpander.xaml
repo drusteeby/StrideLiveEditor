@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Expander x:Name="Root">
-        <Border BorderBrush="Black" BorderThickness="1">
+        <Border BorderBrush="Black" BorderThickness="0">
             <StackPanel x:Name="ComponentList" HorizontalAlignment="Stretch">
                 
             </StackPanel>

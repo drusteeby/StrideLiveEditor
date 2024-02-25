@@ -1,0 +1,19 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Stride.Core.Assets.CompilerApp" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.Engine" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.Navigation" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.Particles" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.Physics" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.UI" Version="4.2.0.2067" />
+    <PackageVersion Include="Stride.Video" Version="4.2.0.2067" />
+    <PackageVersion Include="MahApps.Metro" Version="2.4.10" />
+    <PackageVersion Include="Nerdbank.GitVersioning" Version="3.6.133">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageVersion>
+  </ItemGroup>
+</Project>
