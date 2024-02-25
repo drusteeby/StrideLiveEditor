@@ -34,7 +34,7 @@
 
         <Label Name="label2" Content="Components" Margin="265,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
         <Grid Margin="265,41,10,149">
-            <Border BorderBrush="Gray" BorderThickness="1">
+            <Border BorderBrush="Gray" BorderThickness="0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel x:Name="componentGridList">
 
