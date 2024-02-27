@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using Stride.Core.Extensions;
 using Stride.Engine;
@@ -14,24 +13,11 @@ using System.Reactive.Linq;
 
 namespace StrideLiveEditor.Avalonia
 {
-    public class LiveEditorMainWindow : Window
+    public partial class LiveEditorMainWindow : Window
     {
-        public StackPanel ComponentGridList => this.FindControl<StackPanel>("componentGridList");
-        public TextBlock TxtLog => this.FindControl<TextBlock>("txtLog");
-        public ScrollViewer LogScrollViewer => this.FindControl<ScrollViewer>("logScrollViewer");
-        public Grid RootGrid => this.FindControl<Grid>("RootGrid");
-
         public LiveEditorMainWindow()
         {
             InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private Game game;

@@ -19,7 +19,7 @@
         <Grid Margin="265,41,10,149">
             <Border BorderBrush="Gray" BorderThickness="0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel x:Name="componentGridList">
+                    <StackPanel x:Name="ComponentGridList">
 
                     </StackPanel>
                 </ScrollViewer>
@@ -27,8 +27,8 @@
         </Grid>
 
         <TextBlock Name="label1" Text="Log" Margin="10,0,0,123" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="30"/>
-        <ScrollViewer Name="logScrollViewer" Margin="10,0,10,10" Height="108" VerticalAlignment="Bottom">
-            <TextBlock Name="txtLog" TextWrapping="Wrap" Text="" Foreground="Gray" />
+        <ScrollViewer Name="LogScrollViewer" Margin="10,0,10,10" Height="108" VerticalAlignment="Bottom">
+            <TextBlock Name="TxtLog" TextWrapping="Wrap" Text="" Foreground="Gray" />
         </ScrollViewer>
     </Grid>
 </Window>
