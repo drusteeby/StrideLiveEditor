@@ -1,18 +1,12 @@
-﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Stride.Engine;
+﻿using Stride.Engine;
 
 namespace StrideLiveEditor.Avalonia.DataTypeEditors
 {
-    public class SingleEditor : BaseEditor
+    public partial class SingleEditor : BaseEditor
     {
-        public TextBlock PropertyName => this.FindControl<TextBlock>("PropertyName");
-        public NumericUpDown Value => this.FindControl<NumericUpDown>("Value");
-
         public SingleEditor()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         public SingleEditor(EntityComponent component, ComponentPropertyItem property)
@@ -37,11 +31,6 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
 
             if ((!editorWindowIsActive || !Value.IsFocused) && GetFloat(Value.Value) != value)
                 Value.Value = (decimal)value;
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }

@@ -1,17 +1,12 @@
-﻿using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Stride.Engine;
+﻿using Stride.Engine;
 
 namespace StrideLiveEditor.Avalonia.DataTypeEditors
 {
-    public class Int32Editor : BaseEditor
+    public partial class Int32Editor : BaseEditor
     {
-        public TextBlock PropertyName => this.FindControl<TextBlock>("PropertyName");
-        public NumericUpDown Value => this.FindControl<NumericUpDown>("Value");
-
         public Int32Editor()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         public Int32Editor(EntityComponent component, ComponentPropertyItem property)
@@ -35,11 +30,6 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             var value = (int)ComponentProperty.GetValue(Component);
             if ((!editorWindowIsActive || !Value.IsFocused) && GetInt(Value.Value) != value)
                 Value.Value = value;
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }

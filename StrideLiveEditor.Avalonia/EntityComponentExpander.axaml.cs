@@ -4,11 +4,8 @@ using Stride.Engine;
 
 namespace StrideLiveEditor.Avalonia
 {
-    public class EntityComponentExpander : UserControl
+    public partial class EntityComponentExpander : UserControl
     {
-        public Expander Root => this.FindControl<Expander>("Root");
-        public StackPanel ComponentList => this.FindControl<StackPanel>("ComponentList");
-
         public EntityComponent Component { get; set; }
 
         public EntityComponentExpander() { }
@@ -17,11 +14,6 @@ namespace StrideLiveEditor.Avalonia
         {
             Component = component;
             InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }
