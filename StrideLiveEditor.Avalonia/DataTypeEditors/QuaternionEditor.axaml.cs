@@ -1,21 +1,13 @@
-﻿using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Stride.Core.Mathematics;
+﻿using Stride.Core.Mathematics;
 using Stride.Engine;
 
 namespace StrideLiveEditor.Avalonia.DataTypeEditors
 {
-    public class QuaternionEditor : BaseEditor
+    public partial class QuaternionEditor : BaseEditor
     {
-        public TextBlock PropertyName => this.FindControl<TextBlock>("PropertyName");
-        public NumericUpDown X => this.FindControl<NumericUpDown>("X");
-        public NumericUpDown Y => this.FindControl<NumericUpDown>("Y");
-        public NumericUpDown Z => this.FindControl<NumericUpDown>("Z");
-        public NumericUpDown W => this.FindControl<NumericUpDown>("W");
-
         public QuaternionEditor()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         public QuaternionEditor(EntityComponent component, ComponentPropertyItem property)
@@ -48,11 +40,6 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
                 Z.Value = (decimal)value.Z;
             if ((!editorWindowIsActive || !W.IsFocused) && GetFloat(W.Value) != value.W)
                 W.Value = (decimal)value.W;
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }

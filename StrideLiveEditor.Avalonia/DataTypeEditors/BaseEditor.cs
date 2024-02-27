@@ -12,9 +12,9 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
         public EntityComponent Component { get; private set; }
         public ComponentPropertyItem ComponentProperty { get; private set; }
 
-        public BaseEditor() { }
+        protected BaseEditor() { }
 
-        public BaseEditor(EntityComponent component, ComponentPropertyItem property)
+        protected BaseEditor(EntityComponent component, ComponentPropertyItem property)
         {
             Component = component;
             ComponentProperty = property;
