@@ -2,12 +2,13 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+    <AvaloniaVersion>11.0.9</AvaloniaVersion>
     <StrideVersion>4.2.0.2067</StrideVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Avalonia.Diagnostics" Version="11.0.9" />
-    <PackageVersion Include="Avalonia.Themes.Fluent" Version="11.0.9" />
-    <PackageVersion Include="Avalonia.Themes.Simple" Version="11.0.9" />
+    <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Themes.Simple" Version="$(AvaloniaVersion)" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Common" Version="3.8.0" />
     <PackageVersion Include="Stride.Core.Assets.CompilerApp" Version="$(StrideVersion)" />
     <PackageVersion Include="Stride.Engine" Version="$(StrideVersion)" />
@@ -20,9 +21,9 @@
     <PackageVersion Include="Nerdbank.GitVersioning" Version="3.6.133">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageVersion>
-    <PackageVersion Include="Avalonia" Version="11.0.9" />
-    <PackageVersion Include="Avalonia.Desktop" Version="11.0.9" />
-    <PackageVersion Include="Avalonia.ReactiveUI" Version="11.0.9" />
+    <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.ReactiveUI" Version="$(AvaloniaVersion)" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Common" Version="3.8.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0" />
     <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="3.8.0" />
