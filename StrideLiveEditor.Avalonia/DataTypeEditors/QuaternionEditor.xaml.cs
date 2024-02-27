@@ -41,13 +41,13 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             var value = (Quaternion)ComponentProperty.GetValue(Component);
 
             if ((!editorWindowIsActive || !X.IsFocused) && GetFloat(X.Value) != value.X)
-                X.Value = value.X;
+                X.Value = (decimal)value.X;
             if ((!editorWindowIsActive || !Y.IsFocused) && GetFloat(Y.Value) != value.Y)
-                Y.Value = value.Y;
+                Y.Value = (decimal)value.Y;
             if ((!editorWindowIsActive || !Z.IsFocused) && GetFloat(Z.Value) != value.Z)
-                Z.Value = value.Z;
+                Z.Value = (decimal)value.Z;
             if ((!editorWindowIsActive || !W.IsFocused) && GetFloat(W.Value) != value.W)
-                W.Value = value.W;
+                W.Value = (decimal)value.W;
         }
 
         private void InitializeComponent()

@@ -61,12 +61,12 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             {
                 var textBox = numericUpDown.GetVisualDescendants().OfType<TextBox>().FirstOrDefault();
                 textBox.SelectionStart = 0;
-                textBox.SelectionEnd = textBox.Text.Length > 0 ? textBox.Text.Length : 0;
+                textBox.SelectionEnd = textBox.Text?.Length > 0 ? textBox.Text.Length : 0;
             }
             else if (sender is TextBox textBox)
             {
                 textBox.SelectionStart = 0;
-                textBox.SelectionEnd = textBox.Text.Length > 0 ? textBox.Text.Length : 0;
+                textBox.SelectionEnd = textBox.Text?.Length > 0 ? textBox.Text.Length : 0;
             }
         }
 
@@ -90,7 +90,17 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             return (float)value.GetValueOrDefault(0);
         }
 
+        protected float GetFloat(decimal? value)
+        {
+            return (float)value.GetValueOrDefault(0);
+        }
+
         protected int GetInt(double? value)
+        {
+            return (int)value.GetValueOrDefault(0);
+        }
+
+        protected int GetInt(decimal? value)
         {
             return (int)value.GetValueOrDefault(0);
         }

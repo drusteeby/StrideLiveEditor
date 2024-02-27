@@ -1,13 +1,9 @@
 using System;
 using System.Threading;
 using Stride.Engine;
-
-#if NETFRAMEWORK
-using StrideLiveEditor;
-#else
 using System.Threading.Tasks;
 using StrideLiveEditor.Avalonia;
-#endif
+using Avalonia;
 
 namespace StrideLiveEditorContainerProject.Windows
 {
@@ -19,32 +15,31 @@ namespace StrideLiveEditorContainerProject.Windows
             using (var game = new Game())
             using (var cts = new CancellationTokenSource())
             {
-#if DEBUG
-#if NETFRAMEWORK
-                var window = new LiveEditorMainWindow(game);
+                // WPF editor
+                var window = new StrideLiveEditor.LiveEditorMainWindow(game);
                 window.Show();
-#else
+                
+                // Avalonia editor
                 Task.Run(() => StartLiveEditor(args, game, cts));
-#endif
-#endif
+
                 game.Run();
-#if DEBUG
-#if NETFRAMEWORK
+
+                // Close the WPF window when the game is closed
                 if (window != null)
                     window.Close();
-#else
+                
+                // Close the Avalonia window when the game is closed
                 cts.Cancel();
-#endif
-#endif
             }
         }
 
+        public static AppBuilder BuildAvaloniaApp()
+            => AppBuilder.Configure<App>().UsePlatformDetect();
+
         private static void StartLiveEditor(string[] args, Game game, CancellationTokenSource cts)
         {
-#if NETCOREAPP
             var liveEditor = new LiveEditor(game, args);
             liveEditor.Start(cts.Token);
-#endif
         }
     }
 }

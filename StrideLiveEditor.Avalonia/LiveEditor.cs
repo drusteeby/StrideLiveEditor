@@ -1,7 +1,6 @@
 ﻿using System.Threading;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Logging.Serilog;
 using Stride.Engine;
 
 namespace StrideLiveEditor.Avalonia
@@ -24,7 +23,7 @@ namespace StrideLiveEditor.Avalonia
 
             AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .LogToDebug()
+                .LogToTrace()
                 .Start(AppMain, _args);
         }
 

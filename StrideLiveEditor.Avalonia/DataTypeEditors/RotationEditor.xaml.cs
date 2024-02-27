@@ -44,11 +44,11 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             var value = GetEulerRotation(quaternion);
 
             if ((!editorWindowIsActive || !X.IsFocused) && GetFloat(X.Value) != value.X)
-                X.Value = value.X;
+                X.Value = (decimal)value.X;
             if ((!editorWindowIsActive || !Y.IsFocused) && GetFloat(Y.Value) != value.Y)
-                Y.Value = value.Y;
+                Y.Value = (decimal)value.Y;
             if ((!editorWindowIsActive || !Z.IsFocused) && GetFloat(Z.Value) != value.Z)
-                Z.Value = value.Z;
+                Z.Value = (decimal)value.Z;
         }
 
         private Vector3 GetEulerRotation(Quaternion rotation)

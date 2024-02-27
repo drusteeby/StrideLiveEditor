@@ -22,7 +22,7 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
 
             PropertyName.Text = property.Name;
             var value = property.GetValue(component);
-            Value.Text = value == null ? "null" : value.ToString();
+            Value.Text = value == null ? "null" : value.GetType().Name;
         }
 
         public override void UpdateValues(bool editorWindowIsActive) { }

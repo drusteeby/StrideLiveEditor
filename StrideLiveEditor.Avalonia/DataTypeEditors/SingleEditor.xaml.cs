@@ -36,7 +36,7 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
             var value = (float)ComponentProperty.GetValue(Component);
 
             if ((!editorWindowIsActive || !Value.IsFocused) && GetFloat(Value.Value) != value)
-                Value.Value = value;
+                Value.Value = (decimal)value;
         }
 
         private void InitializeComponent()

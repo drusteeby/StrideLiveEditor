@@ -23,7 +23,7 @@ namespace StrideLiveEditor.Avalonia.DataTypeEditors
 
             PropertyName.Text = property.Name;
 
-            Value.Items = Enum.GetNames(property.PropertyType);
+            Value.ItemsSource = Enum.GetNames(property.PropertyType);
 
             UpdateValues(false);
 

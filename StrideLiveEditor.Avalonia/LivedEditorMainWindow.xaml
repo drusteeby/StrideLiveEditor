@@ -8,17 +8,16 @@
         Title="StrideLiveEditor.Avalonia">
    <Grid x:Name="RootGrid">
         <TextBlock Name="label" Text="Entities" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TreeView x:Name="entityTreeView" Margin="10,41,0,149" Items="{Binding Entities}" HorizontalAlignment="Left" Width="250" SelectionChanged="entityTreeView_SelectedItemChanged">
+	   <TreeView x:Name="entityTreeView" BorderThickness="0" Margin="10,41,0,149" ItemsSource="{Binding Entities}" HorizontalAlignment="Left" Width="250" SelectionChanged="entityTreeView_SelectedItemChanged">
             <TreeView.DataTemplates>
               <TreeDataTemplate DataType="{x:Type local:EntityTreeItem}" ItemsSource="{Binding Children}">
                     <TextBlock Text="{Binding Path=Name}" />
                 </TreeDataTemplate >
             </TreeView.DataTemplates>
         </TreeView>
-
         <TextBlock Name="label2" Text="Components" Margin="265,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="78"/>
         <Grid Margin="265,41,10,149">
-            <Border BorderBrush="Gray" BorderThickness="1">
+            <Border BorderBrush="Gray" BorderThickness="0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel x:Name="componentGridList">
 
