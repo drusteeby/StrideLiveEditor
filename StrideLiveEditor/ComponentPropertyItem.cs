@@ -2,13 +2,13 @@ using System;
 using System.Reflection;
 using System.Text;
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     public class ComponentPropertyItem
     {
         public Stride.Core.DataMemberAttribute DataMember { get; set; }
         public Stride.Core.DisplayAttribute Display { get; set; }
-        
+
         public FieldInfo FieldInfo { get; set; }
         public PropertyInfo PropertyInfo { get; set; }
 

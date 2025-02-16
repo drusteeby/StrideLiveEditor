@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\StrideLiveEditor.Avalonia\StrideLiveEditor.Avalonia.csproj" />
-    <ProjectReference Include="..\..\StrideLiveEditor\StrideLiveEditor.csproj" />
+    <ProjectReference Include="..\..\StrideLiveEditor\Dru.StrideLiveEditor.csproj" />
     <ProjectReference Include="..\StrideLiveEditorContainerProject\StrideLiveEditorContainerProject.csproj" />
    
   </ItemGroup>

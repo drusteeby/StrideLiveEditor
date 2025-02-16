@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using Stride.Engine;
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     public class SceneItem
     {
@@ -16,7 +16,7 @@ namespace StrideLiveEditor
             Entities = sceneRoot.Children;
             TreeRoot = sceneRoot;
 
-            this.scene = (Scene)sceneRoot.Entity;
+            scene = (Scene)sceneRoot.Entity;
         }
 
         public void OnEntityAdded(Entity entity)
@@ -32,7 +32,7 @@ namespace StrideLiveEditor
 
                 //add child to now exiting parent
                 parent = FindEntityInTree(Entities, parentEntity);
-                if(!parent.Children.Any(ti => ti.Entity == entity))
+                if (!parent.Children.Any(ti => ti.Entity == entity))
                     parent.Children.Add(treeItem);
             }
             else

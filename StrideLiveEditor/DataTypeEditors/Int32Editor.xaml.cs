@@ -1,7 +1,9 @@
+using Dru.StrideLiveEditor;
+using Dru.StrideLiveEditor.DataTypeEditors;
 using Stride.Engine;
 using System.Windows.Controls;
 
-namespace StrideLiveEditor.DataTypeEditors
+namespace Dru.StrideLiveEditor.DataTypeEditors
 {
     public partial class Int32Editor : BaseEditor
     {

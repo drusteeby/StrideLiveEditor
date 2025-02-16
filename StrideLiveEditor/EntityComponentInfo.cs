@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     public class EntityComponentInfo
     {
@@ -20,7 +20,7 @@ namespace StrideLiveEditor
         {
             get
             {
-                return (Display != null && !string.IsNullOrWhiteSpace(Display.Name) ? Display.Name : ComponentType.Name);
+                return Display != null && !string.IsNullOrWhiteSpace(Display.Name) ? Display.Name : ComponentType.Name;
             }
         }
 

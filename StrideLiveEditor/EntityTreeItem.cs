@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.ComponentModel;
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     public class EntityTreeItem : INotifyPropertyChanged
     {

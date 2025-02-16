@@ -2,8 +2,9 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+    <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
     <AvaloniaVersion>11.0.9</AvaloniaVersion>
-    <StrideVersion>4.2.0.2067</StrideVersion>
+    <StrideVersion>4.2.0.*</StrideVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />

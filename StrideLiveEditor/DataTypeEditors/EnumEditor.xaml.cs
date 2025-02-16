@@ -1,9 +1,10 @@
+using Dru.StrideLiveEditor;
 using Stride.Engine;
 using System;
 using System.Collections.Generic;
 using System.Windows.Controls;
 
-namespace StrideLiveEditor.DataTypeEditors
+namespace Dru.StrideLiveEditor.DataTypeEditors
 {
     /// <summary>
     /// Interaction logic for EnumEditor.xaml

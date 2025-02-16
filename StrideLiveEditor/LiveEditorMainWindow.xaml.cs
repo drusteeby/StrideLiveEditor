@@ -1,3 +1,5 @@
+
+using Dru.StrideLiveEditor.DataTypeEditors;
 using MahApps.Metro.Controls;
 using Stride.Engine;
 using System;
@@ -12,7 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Media;
 
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     public partial class LiveEditorMainWindow : MetroWindow
     {
@@ -471,8 +473,8 @@ namespace StrideLiveEditor
             {
                 foreach (var element in item.ComponentList.Children)
                 {
-                    if (element is DataTypeEditors.BaseEditor)
-                        ((DataTypeEditors.BaseEditor)element).UpdateValues(IsActive);
+                    if (element is BaseEditor)
+                        ((BaseEditor)element).UpdateValues(IsActive);
                 }
             }
         }

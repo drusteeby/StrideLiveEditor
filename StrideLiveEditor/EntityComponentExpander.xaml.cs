@@ -1,7 +1,7 @@
 using Stride.Engine;
 using System.Windows.Controls;
 
-namespace StrideLiveEditor
+namespace Dru.StrideLiveEditor
 {
     /// <summary>
     /// Interaction logic for EntityComponentExpander.xaml

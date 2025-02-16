@@ -1,10 +1,12 @@
+using Dru.StrideLiveEditor;
+using Dru.StrideLiveEditor.DataTypeEditors;
 using MahApps.Metro.Controls;
 using Stride.Engine;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace StrideLiveEditor.DataTypeEditors
+namespace Dru.StrideLiveEditor.DataTypeEditors
 {
     public partial class SingleEditor : BaseEditor
     {

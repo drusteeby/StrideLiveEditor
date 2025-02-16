@@ -1,3 +1,4 @@
+using Dru.StrideLiveEditor;
 using MahApps.Metro.Controls;
 using Stride.Engine;
 using System;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace StrideLiveEditor.DataTypeEditors
+namespace Dru.StrideLiveEditor.DataTypeEditors
 {
     public abstract class BaseEditor : UserControl
     {
@@ -22,7 +23,7 @@ namespace StrideLiveEditor.DataTypeEditors
             Component = component;
             ComponentProperty = property;
         }
-        
+
         protected void AddTextBoxEvents(params TextBox[] boxes)
         {
             foreach (var box in boxes)
@@ -41,7 +42,7 @@ namespace StrideLiveEditor.DataTypeEditors
                 box.ValueChanged += (s, a) => valueChangedAction();
             }
         }
-        
+
         protected void OnKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)

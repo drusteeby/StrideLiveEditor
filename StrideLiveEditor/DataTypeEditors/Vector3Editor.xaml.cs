@@ -1,8 +1,10 @@
+using Dru.StrideLiveEditor;
+using Dru.StrideLiveEditor.DataTypeEditors;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 using System.Windows.Controls;
 
-namespace StrideLiveEditor.DataTypeEditors
+namespace Dru.StrideLiveEditor.DataTypeEditors
 {
     public partial class Vector3Editor : BaseEditor
     {
