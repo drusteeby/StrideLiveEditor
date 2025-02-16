@@ -9,6 +9,7 @@
     <PackageId>$(AssemblyName)</PackageId>
     <Description>$(AssemblyName)</Description>
     <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -23,9 +24,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MahApps.Metro" />
-    <PackageReference Include="Nerdbank.GitVersioning">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Stride.Engine" />
   </ItemGroup>
 </Project>
